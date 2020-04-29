@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partie 5 Exercice 3 JS</title>
+</head>
+
+<body>
+
+    <h1>Exercice 3</h1>
+    <p>Créer un formulaire contenant un champ nom, un champ mail et un champ age.
+
+        Si les champs ne correspondent pas à une regex, afficher un message d'erreur en rouge sous le champs dès que
+        l'on entre une valeur.</p>
+
+    <form>
+        <label for="name">Ton nom : </label><input type="text" id="name" name="name" placeholder="DJ Oguretz"
+            onkeyup="getname()">
+        <label for="mail">Ton mail : </label><input type="email" id="mail" name="mail"
+            placeholder="adressemail@dupont.com" onkeyup="getmail()">
+        <label for="age">Ton age : </label><input type="text" id="age" name="age" placeholder="Ton age"
+            onkeyup="getage()">
+
+    </form>
+    <script>
+        function getname() {
+
+            let name = document.getElementById('name');
+            let name_regex = /^[a-zA-Z\-ç^¨]+$/;
+
+            if (name_regex.test(name.value)) {
+                name.style.borderColor = "green";
+                document.getElementById('errorname').textcontent = "";
+            } else {
+                name.style.borderColor = "red";
+                document.getElementById('errorname').textcontent = "Caractère non valide";
+            }
+        }
+
+        function getage() {
+            let age = document.getElementById('age');
+            let age_regex = /^[0-9]{1,2}$/;
+
+            if (age_regex.test(age.value)) {
+                age.style.borderColor = "green";
+                document.getElementById('errorage').textcontent = "";
+            } else {
+                age.style.borderColor = "red";
+                document.getElementById('errorage').textcontent = "Caractère non valide";
+            }
+        }
+
+        function getmail() {
+
+
+            let mail = document.getElementById('mail');
+            let mail_regex = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/;
+
+            if (mail_regex.test(mail.value)) {
+
+                mail.style.borderColor = "green";
+                document.getElementById('errormail').textcontent = "";
+            } else {
+                mail.style.borderColor = "red";
+                document.getElementById('errormail').textcontent = "Caractère non valide";
+            }
+
+        }
+    </script>
+
+
+</body>
+
+</html>

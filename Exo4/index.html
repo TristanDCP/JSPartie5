@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partie 5 Exercice 4 JS</title>
+</head>
+
+<body>
+
+    <h1>Exercice 4</h1>
+    <p>Créer un fichier html et y ajouter une image. Au clic sur l'image changer sa source, au survol, l'agrandir.</p>
+
+    <img src="assets/img/margherita.jpg" alt="pizza" title="pizzamargherita" id="theImage" width=555 height=555 onmouseover="width=755; height=755" onmouseout="width=555 ;height=555" onClick="changeImg()"> 
+    <script>
+     function changeImg(){
+
+        theImage.setAttribute('src', 'assets/img/viandes.jpg');
+     }
+
+    </script>
+
+</body>
+
+</html>

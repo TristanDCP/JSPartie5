@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Partie 5 Exercice 2 JS</title>
+</head>
+<body>
+
+    <h1>Exercice 2</h1>
+    <p>Refaire le premier exercice mais en utilisant des classes préparées en css.</p>
+
+    <form>
+        <label for="passwordog">Mot de passe:<input type="password" id="passwordog" name="premierpass" placeholder="Caput Draconis">
+        <label for="passwordchk">Confirmation du mot de passe:<input type="password" id="passwordchk" name="confirmpass" placeholder="Caput Draconis">
+        <button type="button" onclick="passwordcheck()">Vérification</button>
+    </form>
+    <script>
+
+        function passwordcheck() {
+  
+         let passwordfirst = document.getElementById('passwordog')
+         let passwordconfirm = document.getElementById('passwordchk')
+  
+      if (passwordfirst.value == passwordconfirm.value ){
+          console.log('GGWP');
+          passwordfirst.classList.add("borderColorvalid")
+          passwordconfirm.classList.add("borderColorvalid")
+      } 
+      else {
+          console.log('t nul')
+          passwordfirst.classList.add("borderColorwrong")
+          passwordconfirm.classList.add("borderColorwrong")
+      }
+  
+        }
+  </script>
+    
+</body>
+</html> 

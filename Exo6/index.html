@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Partie 5 Exercice 6 JS</title>
+</head>
+
+<body>
+
+    <h1>Exercice 6</h1>
+    <p>Dans un formulaire, faire que les champs aient une bordure noire quand ils ont le focus. La supprimer quand ils
+        perdent le focus.</p>
+
+    <form>
+        <label for="passwordog">Mot de passe:<input type="password" id="passwordog" name="premierpass"
+                placeholder="Caput Draconis" onFocus="formFocus()" onBlur="formFocusBlur()">
+            <label for="passwordchk">Confirmation du mot de passe:<input type="password" id="passwordchk"
+                    name="confirmpass" placeholder="Caput Draconis" onFocus="formFocusCheck()" onBlur="formFocusBlurCheck()">
+    </form>
+    <script>
+        // function formFocus() {
+        //     passwordog.style.border ='2px solid black';
+        // }
+
+        // function formFocusCheck() {
+        //     passwordchk.style.border ='2px solid black';
+        // }
+
+        // function formFocusBlur(){
+        //     passwordog.style.border ='';
+            
+        // }
+
+        // function formFocusBlurCheck(){
+        //     passwordchk.style.border ='';
+        // }
+
+        let idPasswordOriginal = document.getElementById('passwordog');
+        let idPasswordConfirm =  document.getElementById('passwordchk');
+        idPasswordOriginal.addEventListener('focusin', firstBorder)
+        idPasswordConfirm.addEventListener('focusin', secondBorder)
+        idPasswordOriginal.addEventListener('focusout', noBorder)
+        idPasswordConfirm.addEventListener('focusout', noBorder)
+
+        function firstBorder(){
+            idPasswordOriginal.style.border = "2px solid black"
+        }
+
+        function secondBorder(){
+            idPasswordConfirm.style.border = "2px solid black"
+        }
+
+        function noBorder(){
+            idPasswordOriginal.style.border = ""
+            idPasswordConfirm.style.border = ""
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Exercice 8</title>
+</head>
+
+
+<body>
+  <div class="container-md m-5 p-3">
+    <form>
+      <div class="form-group">
+        <label for="firstname">Prénom</label>
+        <input type="text" class="form-control" class="clone" id="firstname" placeholder="Sulian">
+      </div>
+      <div class="form-group">
+        <label for="age">Âge</label>
+        <input type="text" class="form-control" class="clone" id="age" placeholder="29">
+      </div>
+      <button type="button" id="buttonclone" class="btn btn-primary">+</button>
+    </form>
+  </div>
+
+  <script>
+    let idField = document.getElementById("clone");
+    buttonclone.addEventListener("click", cloneFields)
+    function cloneFields() {
+      let Fieldelement = document.getElementsByTagName("DIV")[0];
+      let FieldClone = Fieldelement.cloneNode(true);
+      document.body.appendChild(FieldClone);
+    }
+  </script>
+
+
+</body>
+
+</html>

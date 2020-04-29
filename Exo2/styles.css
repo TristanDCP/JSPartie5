@@ -1,0 +1,7 @@
+.borderColorvalid{
+    border: solid 2px green;
+}
+
+.borderColorwrong{
+    border: solid 2px red;
+}

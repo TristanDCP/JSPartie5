@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partie 5 Exercice 2 JS</title>
+</head>
+<body>
+
+    <h1>Exercice 1</h1>
+    <p>Créer un formulaire demandant un mot de passe et une confirmation de mot de passe et comportant un bouton.
+        Au clic sur le bouton, si les deux champs sont identiques, les entourer de vert. Sinon les entourer en rouge.</p>
+
+    <form>
+        <label for="passwordog">Mot de passe:<input type="password" id="passwordog" name="premierpass" placeholder="Caput Draconis">
+        <label for="passwordchk">Confirmation du mot de passe:<input type="password" id="passwordchk" name="confirmpass" placeholder="Caput Draconis">
+        <button type="button" onclick="passwordcheck()">Vérification</button>
+    </form>
+    <script>
+
+        function passwordcheck() {
+  
+         let passwordfirst = document.getElementById('passwordog')
+         let passwordconfirm = document.getElementById('passwordchk')
+  
+      if (passwordfirst.value == passwordconfirm.value ){
+          console.log('GGWP');
+          document.getElementById('passwordog').style.borderColor = "green";
+          document.getElementById('passwordchk').style.borderColor = "green";
+      } 
+      else {
+          console.log('t nul')
+          document.getElementById('passwordog').style.borderColor = "red";
+          document.getElementById('passwordchk').style.borderColor = "red ";
+      }
+  
+        }
+  </script>
+    
+</body>
+</html> 
